@@ -1481,3 +1481,18 @@ section {
 .zoomable{
   pointer-events: none;
 }
+
+.jck{
+  color: red !important;
+}
+.jck span:nth-child(1) {
+  color: blue !important;
+}
+
+.jck span:nth-child(2) {
+  color: red !important;
+}
+
+.jck span:nth-child(3) {
+  color: blue !important;
+}

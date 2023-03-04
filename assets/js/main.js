@@ -217,11 +217,13 @@
     let portfolioContainer = select('.portfolio-container');
     if (portfolioContainer) {
       let portfolioIsotope = new Isotope(portfolioContainer, {
-        itemSelector: '.portfolio-item'
+        itemSelector: '.portfolio-item',
       });
-
+      portfolioIsotope.arrange({ filter: '.filter-han' });
+      portfolioIsotope.layout();
+      
       let portfolioFilters = select('#portfolio-flters li', true);
-
+     
       on('click', '#portfolio-flters li', function(e) {
         e.preventDefault();
         portfolioFilters.forEach(function(el) {
@@ -263,3 +265,24 @@
   });
 
 })()
+function changeText(filterItem) {
+  console.log(filterItem);
+  if (filterItem === 'han'){
+    document.getElementById("activity").innerHTML = "Ngoài những đường hàn gắn kết các chi tiết lại với nhau đòi hỏi trình độ kỷ thuật cao, chúng tôi luôn tạo ra những đường hàn chất lượng và sắc nét trong từng sản phẩm đáp ứng được sự hài lòng nhất từ khách hàng.";
+  }
+  else if (filterItem === 'bong'){
+    document.getElementById("activity").innerHTML = "Các sản phẩm trong nghành công nghiệp thực phẩm hoặc nghành dược luôn đòi hỏi kỷ thuật ,chất lượng củng như độ tỉ mỉ cao bởi vì thế công nghệ đánh bóng của chúng tôi luôn tạo ra sản phẩm đẹp và sắc nét nhất.";
+  }
+  else if (filterItem === 'cau'){
+    document.getElementById("activity").innerHTML = "Không chỉ gia công các đường ống ,bồn công nghiệp ngoài ra chúng tôi còn nhận đánh bóng các linh kiện inox, lắp đặt các hệ thống trong công nghiệp theo yêu cầu của khách hàng.";
+  }
+  else if (filterItem === 'trinh'){
+    document.getElementById("activity").innerHTML = "Với nhiều năm kinh nghiệm thi công tại công trình chúng tôi luôn đáp ứng được mọi yêu cầu của khách hàng đề ra để đảm bảo được tiến độ thi công củng như lắp đặt, sửa chữa, bảo trì cho hệ thống công nghiệp.";
+  }
+  else if (filterItem === 'dien'){
+    document.getElementById("activity").innerHTML = "Các sản phẩm hệ thống điện của chúng tôi luôn luôn được khách hàng lựa chọn bởi vì chất lượng củng như tính thẩm mỹ cao .";
+  }
+  else{
+    document.getElementById("activity").innerHTML = ''
+  }
+}
